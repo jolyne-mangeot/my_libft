@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 14:52:46 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/18 20:56:38 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/11/18 23:32:41 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	call_prints(const char *format, va_list args)
 				va_arg(args, unsigned int), 16, "0123456789ABCDEF"));
 	else if (flag == 'p')
 		return (ft_put_ptr(
-			va_arg(args, unsigned long int)));
+				va_arg(args, unsigned long int)));
 	return (ft_put_char('%'));
 }
 

@@ -5,59 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/05 20:27:03 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:06:33 by jmangeot         ###   ########.fr       */
+/*   Created: 2025/11/18 23:20:59 by jmangeot          #+#    #+#             */
+/*   Updated: 2025/11/18 23:47:31 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_power(size_t size)
+static void	get_int_info(int n, int *int_size)
 {
-	size_t	result;
+	int	temp_int;
 
-	result = 1;
-	while (size--)
-		result *= 10;
-	return (result);
-}
-
-static int	get_int_info(int n, int *sign)
-{
-	int	int_size;
-
-	if (n < 0)
-		*sign = 1;
-	int_size = 1;
-	while (n >= 10 || n <= -10)
+	temp_int = n;
+	if (temp_int < 0)
+		*int_size = 2;
+	while (temp_int >= 10 || temp_int <= -10)
 	{
-		n /= 10;
-		int_size++;
+		temp_int /= 10;
+		(*int_size)++;
 	}
-	return (int_size);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*string;
+	char	*str;
+	int		temp_int;
 	int		int_size;
-	int		int_sign;
-	size_t	string_size;
 
-	int_sign = 0;
-	int_size = get_int_info(n, &int_sign);
-	string_size = int_sign + int_size;
-	string = (char *)ft_calloc(string_size + 1, 1);
-	if (!string)
+	int_size = 1;
+	get_int_info(n, &int_size);
+	str = ft_calloc(int_size + 1, sizeof(char));
+	if (!str)
 		return (NULL);
-	if (int_sign)
-		string++[0] = '-';
-	while (int_size)
+	if (n < 0)
+		str[0] = '-';
+	while (int_size-- && str[int_size] != '-')
 	{
-		int_sign = ((n / get_power(int_size-- - 1)) % 10);
-		if (int_sign < 0)
-			int_sign *= -1;
-		*string++ = int_sign + 48;
+		temp_int = n;
+		if (temp_int < 0)
+			temp_int = (temp_int % 10) * -1;
+		str[int_size] = temp_int % 10 + 48;
+		n /= 10;
 	}
-	return (string - string_size);
+	return (str);
 }
