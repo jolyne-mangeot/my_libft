@@ -6,46 +6,91 @@
 #    By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/26 22:06:43 by jmangeot          #+#    #+#              #
-#    Updated: 2025/11/26 22:12:08 by jmangeot         ###   ########.fr        #
+#    Updated: 2025/12/05 11:16:23 by jmangeot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = ft_isalpha.c		ft_isdigit.c	ft_isalnum.c	ft_isascii.c		\
-	  ft_isprint.c		ft_strlen.c		ft_memset.c		ft_bzero.c			\
-	  ft_memcpy.c		ft_memmove.c	ft_strlcpy.c	ft_strlcat.c		\
-	  ft_toupper.c		ft_tolower.c	ft_strchr.c		ft_strrchr.c		\
-	  ft_strncmp.c		ft_memchr.c		ft_memcmp.c		ft_strnstr.c		\
-	  ft_atoi.c			ft_strdup.c		ft_calloc.c		ft_substr.c			\
-	  ft_strtrim.c		ft_itoa.c		ft_strmapi.c	ft_striteri.c		\
-	  ft_putchar_fd.c	ft_putstr_fd.c	ft_putendl_fd.c	ft_putnbr_fd.c		\
-	  ft_split.c		ft_strjoin.c	ft_lstnew.c		ft_lstadd_front.c	\
-	  ft_lstsize.c		ft_lstlast.c	ft_lstdelone.c	ft_lstadd_back.c	\
-	  ft_lstclear.c		ft_lstiter.c	ft_lstmap.c
+#	// LIBFT VARIABLES //
+#*		Classification functions
+SRC =		ft_isalpha.c			ft_isdigit.c			ft_isalnum.c	\
+			ft_isascii.c			ft_isprint.c			
 
-PRINTF_SRC = 			printf/ft_printf.c				printf/ft_put_vars.c
+#*		Variable conversion and modification
+SRC +=		ft_itoa.c				ft_atoi.c				ft_atol.c		\
+			ft_toupper.c			ft_tolower.c			
 
-OBJ = $(SRC:.c=.o)
-PRINTF_OBJ = $(PRINTF_SRC:.c=.o)
+#*		String and memory iteration and comparison
+SRC +=		ft_memcmp.c				ft_memchr.c				ft_strlen.c		\
+			ft_strncmp.c			ft_strchr.c				ft_strrchr.c	\
+			ft_strnstr.c			ft_striteri.c			
 
-CFLAGS = -Wall -Wextra -Werror
-NAME = libft.a
+#*		String and memory copy and concatenation
+SRC +=		ft_bzero.c				ft_memset.c				ft_memcpy.c		\
+			ft_memmove.c			ft_strlcpy.c			ft_strlcat.c
 
-PRINTFDIR = printf/
+#*		String and memory allocation, duplication and manipulation
+SRC +=		ft_calloc.c				ft_strdup.c				ft_substr.c		\
+			ft_strtrim.c			ft_split.c				ft_strjoin.c	\
+			ft_strmapi.c
 
-all: $(NAME)
+#*		Content reading and printing in given file descriptor
+SRC +=		ft_putchar_fd.c			ft_putstr_fd.c			ft_putendl_fd.c	\
+			ft_putnbr_fd.c			get_next_line.c			
 
-$(NAME): $(PRINTF_OBJ) $(OBJ)
-	ar rc $(NAME) $(OBJ) $(PRINTF_OBJ)
+#*		Chained list creation, manipulation and deletion
+SRC +=		ft_lstnew.c				ft_lstsize.c			ft_lstlast.c	\
+			ft_lstadd_front.c		ft_lstadd_back.c		ft_lstdelone.c	\
+			ft_lstclear.c			ft_lstiter.c			ft_lstmap.c
 
-%.o: %.c
-	cc $(CFLAGS) -c $^ -o $@
+#*		Directories
+OBJDIR =			obj/
+
+#*		Code and object files
+OBJ =				$(SRC:.c=.o)
+
+#*		Flags and name
+CFLAGS =			-Wall -Wextra -Werror
+NAME =				libft.a
+#	// LIBFT VARIABLES //
+
+
+#	// PRINTF VARIABLES //
+#*		Sources
+PTFSRC =	ft_printf.c				ft_put_vars.c
+
+#*		Directories
+PTFDIR =		printf/
+OBJPTFDIR =		$(addprefix $(OBJDIR),$(PTFDIR))
+
+#*		Code and object files
+PTFSRC :=		$(addprefix $(PTFDIR),$(PTFSRC))
+OBJ +=			$(PTFSRC:.c=.o)
+#	// PRINTF VARIABLES //
+
+
+#	// MAKEFILE RULES //
+#*		Mandatories
+all:			$(NAME)
 
 clean:
-	rm -f $(OBJ)
-	cd $(PRINTFDIR) && make clean
+	rm -f $(addprefix $(OBJDIR),$(OBJ))
+	rm -fd $(OBJPTFDIR) $(OBJDIR)
 
-fclean: clean
+fclean:			clean
 	rm -f $(NAME)
-	cd $(PRINTFDIR) && make fclean
 
-re: fclean all
+re:			fclean all
+
+#*		Compilation
+$(NAME):		$(OBJDIR) $(OBJPTFDIR) $(OBJ)
+	ar rc $(NAME) $(addprefix $(OBJDIR),$(OBJ))
+
+%.o:			%.c
+	cc $(CFLAGS) -c $^ -o $(addprefix $(OBJDIR),$@)
+
+#*		Directories
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+$(OBJPTFDIR):	$(OBJDIR)
+	mkdir -p $(OBJPTFDIR)
