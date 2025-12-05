@@ -6,7 +6,7 @@
 #    By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/26 22:06:43 by jmangeot          #+#    #+#              #
-#    Updated: 2025/12/05 11:44:25 by jmangeot         ###   ########.fr        #
+#    Updated: 2025/12/05 15:34:01 by jmangeot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,9 @@ SRC =		ft_isalpha.c			ft_isdigit.c			ft_isalnum.c	\
 			ft_isascii.c			ft_isprint.c			
 
 #*		Variable conversion and modification
-SRC +=		ft_itoa.c				ft_ltoa.c				ft_atoi.c		\
-			ft_atol.c				ft_toupper.c			ft_tolower.c
+SRC +=		ft_itoa.c				ft_ltoa.c				ft_lltoa.c		\
+			ft_atoi.c				ft_atol.c				ft_atoll.c		\
+			ft_toupper.c			ft_tolower.c			
 
 #*		String and memory iteration and comparison
 SRC +=		ft_memcmp.c				ft_memchr.c				ft_strlen.c		\
