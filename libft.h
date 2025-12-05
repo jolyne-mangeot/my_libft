@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 15:58:49 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/04 19:25:28 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/05 11:43:51 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int			ft_isprint(int c);
 
 //*				Variable conversion and modification
 char		*ft_itoa(int n);
+char		*ft_ltoa(long int n);
 int			ft_atoi(const char *nptr);
 long int	ft_atol(const char *nptr);
 int			ft_toupper(int c);
