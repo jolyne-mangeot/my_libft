@@ -6,7 +6,7 @@
 #    By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/26 22:06:43 by jmangeot          #+#    #+#              #
-#    Updated: 2025/12/05 11:16:23 by jmangeot         ###   ########.fr        #
+#    Updated: 2025/12/05 11:26:20 by jmangeot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,3 +94,5 @@ $(OBJDIR):
 
 $(OBJPTFDIR):	$(OBJDIR)
 	mkdir -p $(OBJPTFDIR)
+
+.PHONY:			all, clean, fclean, re
