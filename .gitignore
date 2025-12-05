@@ -1,0 +1,15 @@
+*.git
+TODO
+
+*.o
+*.out
+
+libft.a
+obj
+main.c
+
+vgcore*
+*.vscode
+
+*/*ester
+*Tester*
