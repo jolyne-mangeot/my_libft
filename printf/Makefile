@@ -6,11 +6,11 @@
 #    By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/18 17:35:48 by jmangeot          #+#    #+#              #
-#    Updated: 2025/11/18 17:36:18 by jmangeot         ###   ########.fr        #
+#    Updated: 2025/12/06 19:00:48 by jmangeot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = ft_printf.c ft_put_vars.c
+SRC = ft_printf.c ft_put_vars.c ft_put_numbers.c
 
 OBJ = $(SRC:.c=.o)
 
