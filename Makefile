@@ -6,7 +6,7 @@
 #    By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/26 22:06:43 by jmangeot          #+#    #+#              #
-#    Updated: 2025/12/05 15:34:01 by jmangeot         ###   ########.fr        #
+#    Updated: 2025/12/06 19:01:27 by jmangeot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ NAME =				libft.a
 
 #	// PRINTF VARIABLES //
 #*		Sources
-PTFSRC =	ft_printf.c				ft_put_vars.c
+PTFSRC =	ft_printf.c				ft_put_vars.c			ft_put_numbers.c
 
 #*		Directories
 PTFDIR =		printf/
