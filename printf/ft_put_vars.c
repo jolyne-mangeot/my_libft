@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 17:40:04 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/04 18:55:50 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/06 18:36:39 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ int	ft_put_ptr(unsigned long int ptr)
 		+ ft_put_lunsigned(ptr, 16, "0123456789abcdef"));
 }
 
-int	ft_put_lsigned(signed long int number,
-				signed long int base, char *digits)
+int	ft_put_signed(signed int number,
+				signed int base, char *digits)
 {
 	int	print_size;
 
 	print_size = 0;
 	if (number > base - 1 || number < (base * -1) + 1)
-		print_size += ft_put_lsigned(number / base, base, digits);
+		print_size += ft_put_signed(number / base, base, digits);
 	else if (number < 0)
 		print_size = ft_put_char('-');
 	if (number < 0)
@@ -52,13 +52,13 @@ int	ft_put_lsigned(signed long int number,
 	return (print_size + write(1, &digits[number % base], 1));
 }
 
-int	ft_put_lunsigned(unsigned long int number,
-					unsigned long int base, char *digits)
+int	ft_put_unsigned(unsigned int number,
+					unsigned int base, char *digits)
 {
 	int	print_size;
 
 	print_size = 0;
 	if (number > base - 1)
-		print_size += ft_put_lunsigned(number / base, base, digits);
+		print_size += ft_put_unsigned(number / base, base, digits);
 	return (print_size + write(1, &digits[number % base], 1));
 }
