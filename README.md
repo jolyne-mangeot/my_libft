@@ -65,7 +65,7 @@ This library consists of 43 functions that you can find a description of below, 
 | `ft_putstr_fd` | output using write function a string of characters to a file descriptor. |
 | `ft_putendl_fd` | output using write function a tring of characters to a file descriptor, followed by a new line. |
 | `ft_putnbr_fd` | output using write function an int value with its possible negative sign to a file descriptor. |
-| `get_next_line` | read and returns a single line from a fie descriptor, either ending with a `\n` or the last character of the file. |
+| `get_next_line` | read and returns a single line from a fiLe descriptor, either ending with a `\n` or the last character of the file. |
 | | **Linked list creation, manipulation and deletion**  |
 | `ft_lstnew` | create and return the pointer of a new structure usable as a chained list element. |
 | `ft_lstsize` | count the number of elements in a pointed chained list, returning the result. |

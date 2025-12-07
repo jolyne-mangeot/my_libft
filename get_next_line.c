@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 18:12:36 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 14:02:10 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 17:25:33 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ static ssize_t	get_content(char *buffer,
 }
 
 /*
-read and returns a single line from a fie descriptor, either ending with a `\n` 
+read and returns a single line from a fiLe descriptor, either ending with a `\n` 
 or the last character of the file.
 */
 char	*get_next_line(int fd)
