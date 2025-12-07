@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:37:42 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:06:58 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:59:50 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+creates a string of characters by duplicating an input source, returning an 
+allocated pointer to the destination.
+*/
 char	*ft_strdup(char *src)
 {
 	char	*new_string;
@@ -22,7 +26,7 @@ char	*ft_strdup(char *src)
 	index = 0;
 	while (src[index])
 		index++;
-	new_string = (char *)malloc((index + 1) * sizeof(char));
+	new_string = (char *)malloc(sizeof(char) * (index + 1));
 	if (!new_string)
 		return (NULL);
 	ft_strlcpy(new_string, src, index + 1);

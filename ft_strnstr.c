@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:21:35 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:05:29 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:57:29 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+locate a substring in a string and return its pointer within the source, 
+otherwise NULL.
+*/
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	index;
