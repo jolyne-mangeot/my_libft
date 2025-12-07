@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 23:20:59 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/21 14:37:28 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:16:26 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_itoa(int n)
 
 	int_size = 1;
 	get_int_info(n, &int_size);
-	str = ft_calloc(int_size + 1, sizeof(char));
+	str = ft_calloc(sizeof(char), int_size + 1);
 	if (!str)
 		return (NULL);
 	if (n < 0)
