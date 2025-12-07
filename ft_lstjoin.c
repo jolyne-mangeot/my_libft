@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 13:13:39 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 14:03:44 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 15:00:05 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,12 @@ void	**ft_lstjoin(t_list *begin_list, int deletion)
 	temp = begin_list;
 	index = 0;
 	while (temp)
+	{
 		table[index++] = temp->content;
+		temp = temp->next;
+	}
 	table[index] = NULL;
 	if (deletion)
-		ft_lstclear(&begin_list, &free);
+		ft_lstclear(&begin_list, NULL);
 	return (table);
 }
