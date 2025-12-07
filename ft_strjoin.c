@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:37:30 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:07:05 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:00:46 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+return a string of characters created from the concatenation of two input 
+sources.
+*/
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*joined_string;
@@ -22,7 +26,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		return (NULL);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	joined_string = (char *)malloc(s1_len + s2_len + 1);
+	joined_string = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
 	if (!joined_string)
 		return (NULL);
 	ft_strlcpy(joined_string, s1, s1_len + 1);

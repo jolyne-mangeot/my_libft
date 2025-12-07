@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:50:50 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:05:59 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:00:18 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+create and return a string consisting of a source trimmed of a set of 
+characters from its beginning and its end.
+*/
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*cast_s1;
@@ -26,7 +30,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	trim_len = ft_strlen(cast_s1);
 	while (*cast_s1 && ft_strchr(set, cast_s1[trim_len - 1]))
 		trim_len--;
-	trim_string = (char *)malloc(trim_len + 1 * sizeof(char));
+	trim_string = (char *)malloc(sizeof(char) * (trim_len + 1));
 	if (!trim_string)
 		return (NULL);
 	ft_strlcpy(trim_string, cast_s1, trim_len + 1);

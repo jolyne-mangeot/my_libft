@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:09:56 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:04:13 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:56:23 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+locate and return a pointer to the first occurence of a character in a string, 
+otherwise NULL.
+*/
 char	*ft_strchr(const char *s, int c)
 {
 	char	*cast_s;

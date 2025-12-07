@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 17:26:20 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/18 21:29:32 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 15:00:38 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+delete a chained list elements' content and free their allocated memory, no 
+return value.
+*/
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp_node;
@@ -20,7 +24,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	{
 		while (*lst)
 		{
-			del((*lst)->content);
+			if (del)
+				del((*lst)->content);
 			temp_node = (*lst)->next;
 			free(*lst);
 			*lst = temp_node;

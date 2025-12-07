@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:29:58 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:04:52 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:58:59 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+copy on an input maximum length a string of characters from a source to a 
+destination and returns the amount of concerned bytes.
+*/
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	src_len;
