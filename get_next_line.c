@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 18:12:36 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/04 18:33:39 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:19:28 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static ssize_t	new_node(char *buffer, t_list **list, ssize_t line_len)
 	line_content = (void *)malloc(sizeof(t_line));
 	if (!line_content)
 		return ((ssize_t)free_me_the_malloc(*list));
-	line_content->buffer = (char *)malloc((line_len + 1) * sizeof(char));
+	line_content->buffer = (char *)malloc(sizeof(char) * (line_len + 1));
 	if (!line_content->buffer)
 		return ((ssize_t)free_me_the_malloc(*list));
 	line = ft_lstnew((void *)line_content);
@@ -67,7 +67,7 @@ static char	*list_to_char(t_list *list, char *return_char)
 		len += ((t_line *)temp->content)->line_len;
 		temp = temp->next;
 	}
-	return_char = (char *)malloc((len + 1) * sizeof(char));
+	return_char = (char *)malloc(sizeof(char) * (len + 1));
 	if (!return_char)
 		return (free_me_the_malloc(list));
 	return_char[len] = '\0';

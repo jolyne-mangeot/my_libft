@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:13:35 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:06:12 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:18:47 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	sublen -= start;
 	if (sublen > len)
 		sublen = len;
-	substr = (char *)malloc((sublen + 1) * sizeof(char));
+	substr = (char *)malloc(sizeof(char) * (sublen + 1));
 	if (!substr)
 		return (NULL);
 	ft_strlcpy(substr, s + start, sublen + 1);
