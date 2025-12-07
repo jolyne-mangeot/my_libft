@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:56:02 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:03:42 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:55:17 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+compare two memory areas on an input length until bytes differ, returning the 
+difference of value of byte1 - byte2, otherwise 0.
+*/
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*cast_s1;

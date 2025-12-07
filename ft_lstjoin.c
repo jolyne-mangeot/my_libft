@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 13:13:39 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 13:40:37 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:03:44 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+create a table of pointers regrouping all given list's content in an allocated 
+memory area, if second argument is different from 0, also delete list.
+*/
 void	**ft_lstjoin(t_list *begin_list, int deletion)
 {
 	void	**table;

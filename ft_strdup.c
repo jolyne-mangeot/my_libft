@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:37:42 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 13:17:47 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:59:50 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+creates a string of characters by duplicating an input source, returning an 
+allocated pointer to the destination.
+*/
 char	*ft_strdup(char *src)
 {
 	char	*new_string;

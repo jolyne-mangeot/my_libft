@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:33:36 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 16:14:45 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:56:07 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+compare two strings on an input length until characters differ, returning the 
+difference of value of char1 - char2, otherwise 0.
+*/
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	while (n--)

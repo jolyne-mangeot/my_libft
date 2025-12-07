@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:13:35 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 13:18:47 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:00:05 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+return a string of characters copied from a source from an index start and on a 
+maximum input length.
+*/
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*substr;

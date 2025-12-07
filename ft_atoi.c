@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:50:44 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 16:15:06 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:54:01 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+return an int equivalent of an input string of characters by following set 
+rules, covers all possible int values.
+*/
 int	ft_atoi(const char *nptr)
 {
 	int		result;
