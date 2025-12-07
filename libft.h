@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 15:58:49 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 14:05:17 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:11:03 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # endif
 
 # include <stdlib.h>
+# include <unistd.h>
 # include "printf/ft_printf.h"
 
 typedef struct s_list
