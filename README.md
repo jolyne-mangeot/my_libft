@@ -22,15 +22,15 @@ This library consists of 43 functions that you can find a description of below, 
 | Functions name | Description and return type |
 | --- | --- |
 | | **Classification functions** |
-| `ft_isalpha` | check if argument is an alphabetic character and returns a boolean value (false = 0, true =/= 0). |
-| `ft_isdigit` | check if argument is a digit and returns boolean value. |
-| `ft_isalnum` | check if argument is an alphanumeric character and returns boolean value. |
-| `ft_isascii` | check if argument is an ASCII character (0 to 127) and returns boolean value. |
-| `ft_isprint` | check if argument is any printable character (32 to 126) and returns boolean value. |
+| `ft_isalpha` | check if argument is an alphabetic character and returns a boolean value. |
+| `ft_isdigit` | check if argument is a digit and returns a boolean value. |
+| `ft_isalnum` | check if argument is an alphanumeric character and returns a boolean value. |
+| `ft_isascii` | check if argument is an ASCII character (0 to 127) and returns a boolean value. |
+| `ft_isprint` | check if argument is any printable character (32 to 126) and returns a boolean value. |
 | | **Variable conversion and modification** |
-| `ft_itoa` | return a string created from an int value literally transcribed to ascii characters, covers all possible int values. |
-| `ft_ltoa` | return a string created from a long int value literally transcribed to ascii characters, covers all possible long int values. |
-| `ft_lltoa` | return a string created from a long long int value literally transcribed to ascii characters, covers all possible long long int values. |
+| `ft_itoa` | return a string created from an int value literally transcribed to ASCII characters, covers all possible int values. |
+| `ft_ltoa` | return a string created from a long int value literally transcribed to ASCII characters, covers all possible long int values. |
+| `ft_lltoa` | return a string created from a long long int value literally transcribed to ASCII characters, covers all possible long long int values. |
 | `ft_atoi` | return an int equivalent of an input string of characters by following set rules, covers all possible int values. |
 | `ft_atol` | return a long int equivalent of an input string of characters by following set rules, covers all possible long int values. |
 | `ft_atoll` | return a long long int equivalent of an input string of characters by following set rules, covers all possible long long int values. |
@@ -43,7 +43,7 @@ This library consists of 43 functions that you can find a description of below, 
 | `ft_strncmp` | compare two strings on an input length until characters differ, returning the difference of value of char1 - char2, otherwise 0. |
 | `ft_strchr` | locate and return a pointer to the first occurence of a character in a string, otherwise NULL. |
 | `ft_strrchr` | locate and return a pointer to the last occurence of a character in a string, otherwise NULL. |
-| `ft_strnstr` | locate a substring in a string. |
+| `ft_strnstr` | locate a substring in a string and return its pointer within the source, otherwise NULL. |
 | `ft_striteri` | apply an input function on every character of a source string, no return value. |
 | | **String and memory copy and concatenation** |
 | `ft_bzero` | replace input amount of bytes by zeroes, no return value. |
@@ -61,21 +61,21 @@ This library consists of 43 functions that you can find a description of below, 
 | `ft_strjoin` | return a string of characters created from the concatenation of two input sources. |
 | `ft_strmapi` | create and return a string of characters from the result of an input function applied to every characters of a source string. |
 | | **Content reading and printing in given file descriptor** |
-| `ft_putchar_fd` | output using write function a single character to a file descriptor |
-| `ft_putstr_fd` | output using write function a string of characters to a file descriptor |
+| `ft_putchar_fd` | output using write function a single character to a file descriptor. |
+| `ft_putstr_fd` | output using write function a string of characters to a file descriptor. |
 | `ft_putendl_fd` | output using write function a tring of characters to a file descriptor, followed by a new line. |
-| `ft_putnbr_fd` | output using write function an int value with its possible negative sign to a file descriptor |
-| `get_next_line` | read and returns a single line from a fie descriptor, either ending with a `\n` or the last character of the file |
+| `ft_putnbr_fd` | output using write function an int value with its possible negative sign to a file descriptor. |
+| `get_next_line` | read and returns a single line from a fie descriptor, either ending with a `\n` or the last character of the file. |
 | | **Linked list creation, manipulation and deletion**  |
 | `ft_lstnew` | create and return the pointer of a new structure usable as a chained list element. |
-| `ft_lstsize` | count the number of elements in a pointed chained list, returning the reult. |
+| `ft_lstsize` | count the number of elements in a pointed chained list, returning the result. |
 | `ft_lstlast` | find and return the pointer of the last element of a pointed chained list. |
 | `ft_lstadd_front` | add a chained list element to the front of a pointed source list. |
 | `ft_lstadd_back` | add a chained list element to the back of a pointed source list. |
 | `ft_lstjoin` | create a table of pointers regrouping all given list's content in an allocated memory area, if second argument is different from 0, also delete list. |
 | `ft_lstiter` | apply an input function on every content of a pointed chained list, no return value. |
 | `ft_lstmap` | return a chained list created from the result of an input function applied to every content of a source list. |
-| `ft_lstdelone` | delete a single pointed to structure's content using a function added as argument and free the node itself |
+| `ft_lstdelone` | delete a single pointed to structure's content using a function added as argument and free the node itself. |
 | `ft_lstclear` | delete a chained list elements' content and free their allocated memory, no return value. |
 
 ## Ressources

@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 23:20:59 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 13:16:36 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:05:53 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ static void	get_int_info(int n, int *int_size)
 	}
 }
 
+/*
+return a string created from a long long int value literally transcribed to 
+ASCII characters, covers all possible long long int values.
+*/
 char	*ft_lltoa(long long int n)
 {
 	char			*str;

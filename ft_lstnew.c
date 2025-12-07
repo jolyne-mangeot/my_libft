@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 12:20:28 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:06:51 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:02:27 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+create and return the pointer of a new structure usable as a chained list 
+element.
+*/
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;

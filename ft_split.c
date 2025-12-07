@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 19:29:19 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 13:17:24 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:00:33 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ static char	**fill_array(char **split_s, char *cast_s, char c)
 	return (split_s);
 }
 
+/*
+split a source string into an array of smaller string based on a separator 
+added as argument.
+*/
 char	**ft_split(const char *s, char c)
 {
 	char	**split_s;
