@@ -6,59 +6,59 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 17:40:04 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/06 18:36:39 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 18:51:55 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_put_char(char c)
+void	ft_put_char(char c, ssize_t *print_size)
 {
-	return (write(1, &c, 1));
+	*print_size += write(1, &c, 1);
 }
 
-int	ft_put_str(char *s)
+void	ft_put_str(char *s, ssize_t *print_size)
 {
 	size_t	len;
 
 	if (!s)
-		return (write(1, "(null)", 6));
+	{
+		*print_size += write(1, "(null)", 6);
+		return ;
+	}
 	len = 0;
 	while (s[len])
 		len++;
-	return (write(1, s, len));
+	*print_size += write(1, s, len);
 }
 
-int	ft_put_ptr(unsigned long int ptr)
+void	ft_put_ptr(unsigned long int ptr, ssize_t *print_size)
 {
 	if (!ptr)
-		return (write(1, "(nil)", 5));
-	return (write(1, "0x", 2)
-		+ ft_put_lunsigned(ptr, 16, "0123456789abcdef"));
+	{
+		ft_put_str("(nil)", print_size);
+		return ;
+	}
+	ft_put_str("0x", print_size);
+	ft_put_lunsigned(ptr, 16, "0123456789abcdef", print_size);
 }
 
-int	ft_put_signed(signed int number,
-				signed int base, char *digits)
+void	ft_put_signed(signed int number, signed int base,
+	char *digits, ssize_t *print_size)
 {
-	int	print_size;
-
-	print_size = 0;
 	if (number > base - 1 || number < (base * -1) + 1)
-		print_size += ft_put_signed(number / base, base, digits);
+		ft_put_signed(number / base, base, digits, print_size);
 	else if (number < 0)
-		print_size = ft_put_char('-');
+		ft_put_char('-', print_size);
 	if (number < 0)
 		number = (number % base) * -1;
-	return (print_size + write(1, &digits[number % base], 1));
+	ft_put_char(digits[number % base], print_size);
 }
 
-int	ft_put_unsigned(unsigned int number,
-					unsigned int base, char *digits)
+void	ft_put_unsigned(unsigned int number, unsigned int base,
+	char *digits, ssize_t *print_size)
 {
-	int	print_size;
-
-	print_size = 0;
 	if (number > base - 1)
-		print_size += ft_put_unsigned(number / base, base, digits);
-	return (print_size + write(1, &digits[number % base], 1));
+		ft_put_unsigned(number / base, base, digits, print_size);
+	ft_put_char(digits[number % base], print_size);
 }
