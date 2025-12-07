@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 11:12:23 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:05:07 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:18:17 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	if (!s || !f)
 		return (NULL);
 	string_len = ft_strlen(s);
-	iterate_string = (char *)malloc((string_len + 1) * sizeof(char));
+	iterate_string = (char *)malloc(sizeof(char) * (string_len + 1));
 	if (!iterate_string)
 		return (NULL);
 	iterate_string[string_len] = 0;
