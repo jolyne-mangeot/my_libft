@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 15:05:25 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:04:44 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:59:13 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+concatenate a source at the end of a destination, only covering an input 
+maximum length, returns the amount of concerned bytes.
+*/
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	index;

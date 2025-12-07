@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtol.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 14:16:22 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/03 14:17:19 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:54:16 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+return a long int equivalent of an input string of characters by following set 
+rules, covers all possible long int values.
+*/
 long int	ft_atol(const char *nptr)
 {
 	long int	result;

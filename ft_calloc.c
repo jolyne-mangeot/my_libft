@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 20:05:00 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:06:25 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:59:29 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+allocate an input length of memory and set all its bytes to 0, returning its 
+pointer.
+*/
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*alloc;
