@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 23:20:59 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 13:16:26 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:05:48 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ static void	get_int_info(int n, int *int_size)
 		(*int_size)++;
 	}
 }
-
+/*
+return a string created from an int value literally transcribed to ASCII 
+characters, covers all possible int values.
+*/
 char	*ft_itoa(int n)
 {
 	char	*str;

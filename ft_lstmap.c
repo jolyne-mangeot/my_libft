@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 17:44:47 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/18 21:28:39 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:04:06 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+return a chained list created from the result of an input function applied to 
+every content of a source list.
+*/
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*map_list;

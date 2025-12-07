@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:50:50 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 13:18:39 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:00:18 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+create and return a string consisting of a source trimmed of a set of 
+characters from its beginning and its end.
+*/
 char	*ft_strtrim(const char *s1, const char *set)
 {
 	char	*cast_s1;

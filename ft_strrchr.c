@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:14:10 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/14 18:05:36 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:56:35 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+locate and return a pointer to the last occurence of a character in a string, 
+otherwise NULL.
+*/
 char	*ft_strrchr(const char *s, int c)
 {
 	char	cast_c;

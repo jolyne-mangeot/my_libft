@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 18:37:30 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 13:18:03 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:00:46 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+return a string of characters created from the concatenation of two input 
+sources.
+*/
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*joined_string;

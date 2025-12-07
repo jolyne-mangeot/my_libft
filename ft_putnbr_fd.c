@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmangeot <jmangeot@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 11:59:18 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/11/06 12:08:06 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:01:48 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+output using write function an int value with its possible negative sign to a 
+file descriptor.
+*/
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n >= 10 || n <= -10)

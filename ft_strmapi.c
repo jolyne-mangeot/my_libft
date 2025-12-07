@@ -6,12 +6,16 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 11:12:23 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 13:18:17 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:00:57 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+create and return a string of characters from the result of an input function 
+applied to every characters of a source string.
+*/
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	char	*iterate_string;
