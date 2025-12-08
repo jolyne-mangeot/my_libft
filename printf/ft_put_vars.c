@@ -6,59 +6,80 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 17:40:04 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 18:51:55 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/08 15:47:35 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_put_char(char c, ssize_t *print_size)
+/*
+output in STDOUT channel the character passed in argument.
+*/
+ssize_t	ft_put_char(char c)
 {
-	*print_size += write(1, &c, 1);
+	return(write(STDOUT_FILENO, &c, 1));
 }
 
-void	ft_put_str(char *s, ssize_t *print_size)
+/*
+output in STDOUT channel the string of characters passed in argument.
+*/
+ssize_t	ft_put_str(char *s)
 {
 	size_t	len;
 
 	if (!s)
 	{
-		*print_size += write(1, "(null)", 6);
-		return ;
+		return(write(STDOUT_FILENO, "(null)", 6));
 	}
 	len = 0;
 	while (s[len])
 		len++;
-	*print_size += write(1, s, len);
+	return(write(STDOUT_FILENO, s, len));
 }
 
-void	ft_put_ptr(unsigned long int ptr, ssize_t *print_size)
+/*
+output in STDOUT channel the pointer passed in argument, in format 
+"0xhexadecimal".
+*/
+ssize_t	ft_put_ptr(unsigned long int ptr)
 {
 	if (!ptr)
 	{
-		ft_put_str("(nil)", print_size);
-		return ;
+		return (ft_put_str("(nil)"));
 	}
-	ft_put_str("0x", print_size);
-	ft_put_lunsigned(ptr, 16, "0123456789abcdef", print_size);
+	return (ft_put_str("0x") + ft_put_lunsigned(ptr, 16, "0123456789abcdef"));
 }
 
-void	ft_put_signed(signed int number, signed int base,
-	char *digits, ssize_t *print_size)
+/*
+output in STDOUT channel the signed int passed in argument based on entered 
+digits.
+*/
+ssize_t	ft_put_signed(signed int number, signed int base_size,
+	char *digits)
 {
-	if (number > base - 1 || number < (base * -1) + 1)
-		ft_put_signed(number / base, base, digits, print_size);
+	ssize_t	print_size;
+
+	print_size = 0;
+	if (number > base_size - 1 || number < (base_size * -1) + 1)
+		print_size += ft_put_signed(number / base_size, base_size, digits);
 	else if (number < 0)
-		ft_put_char('-', print_size);
+		print_size += ft_put_char('-');
 	if (number < 0)
-		number = (number % base) * -1;
-	ft_put_char(digits[number % base], print_size);
+		number = (number % base_size) * -1;
+	return (print_size + ft_put_char(digits[number % base_size]));
 }
 
-void	ft_put_unsigned(unsigned int number, unsigned int base,
-	char *digits, ssize_t *print_size)
+/*
+output in STDOUT channel the unsigned int passed in argument based on entered 
+digits.
+*/
+ssize_t	ft_put_unsigned(unsigned int number, unsigned int base_size,
+	char *digits)
 {
-	if (number > base - 1)
-		ft_put_unsigned(number / base, base, digits, print_size);
-	ft_put_char(digits[number % base], print_size);
+	ssize_t	print_size;
+
+	print_size = 0;
+	if (number > base_size - 1)
+		print_size += ft_put_unsigned(number / base_size, base_size, digits);
+	return (print_size + ft_put_char(digits[number % base_size]));
 }

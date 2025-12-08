@@ -77,6 +77,17 @@ This library consists of 43 functions that you can find a description of below, 
 | `ft_lstmap` | return a chained list created from the result of an input function applied to every content of a source list. |
 | `ft_lstdelone` | delete a single pointed to structure's content using a function added as argument and free the node itself. |
 | `ft_lstclear` | delete a chained list elements' content and free their allocated memory, no return value. |
+| | **Printf lib functions** |
+| `ft_printf` | output in STDOUT channel formatted arguments following printf behavior as declared in stdio.h, does not support error throwing nor numeral or string justifying. |
+| `ft_put_char` | output in STDOUT channel the character passed in argument. |
+| `ft_put_str` | output in STDOUT channel the string of characters passed in argument. |
+| `ft_put_ptr` | output in STDOUT channel the pointer passed in argument, in format "0xhexadecimal". |
+| `ft_put_signed` | output in STDOUT channel the signed int passed in argument based on entered digits. |
+| `ft_put_unsigned` | output in STDOUT channel the unsigned int passed in argument based on entered digits. |
+| `ft_put_lsigned` | output in STDOUT channel the signed long int passed in argument based on entered digits. |
+| `ft_put_lunsigned` | output in STDOUT channel the unsigned long int passed in argument based on entered digits. |
+| `ft_put_llsigned` | output in STDOUT channel the signed long long int passed in argument based on entered digits. |
+| `ft_put_llunsigned` | output in STDOUT channel the unsigned long long int passed in argument based on entered digits. |
 
 ## Ressources
 
