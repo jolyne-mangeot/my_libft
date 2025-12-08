@@ -11,5 +11,5 @@ main.c
 vgcore*
 *.vscode
 
-*/*ester
-*Tester*
+*test*
+*ester*
