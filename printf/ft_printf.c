@@ -6,30 +6,11 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 14:52:46 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/08 15:46:55 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/09 10:43:09 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int	is_flag(const char *c)
-{
-	char	*flags;
-
-	flags = "cspdiuoxXl%";
-	while (*flags)
-		if (*flags++ == *c)
-			return (1);
-	if (*c == 'l')
-	{
-		if (*(c + 1) == 'd' || *(c + 1) == 'u')
-			return (1);
-		else if (*(c + 1) == 'l')
-			if (*(c + 2) == 'd' || *(c + 2) == 'u')
-				return (1);
-	}
-	return (0);
-}
 
 static ssize_t	call_ll_prints(const char *flag, va_list args,
 	ssize_t *print)
