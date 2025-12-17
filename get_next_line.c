@@ -6,7 +6,7 @@
 /*   By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 18:12:36 by jmangeot          #+#    #+#             */
-/*   Updated: 2025/12/07 17:25:33 by jmangeot         ###   ########.fr       */
+/*   Updated: 2025/12/17 12:25:01 by jmangeot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ static ssize_t	new_node(char *buffer, t_list **list, ssize_t line_len)
 
 	line_content = (void *)malloc(sizeof(t_line));
 	if (!line_content)
-		return ((ssize_t)free_me_the_malloc(*list));
+		return (-1);
 	line_content->buffer = (char *)malloc(sizeof(char) * (line_len + 1));
 	if (!line_content->buffer)
-		return ((ssize_t)free_me_the_malloc(*list));
+		return (-1);
 	line = ft_lstnew((void *)line_content);
 	if (!line)
-		return ((ssize_t)free_me_the_malloc(*list));
+		return (-1);
 	ft_lstadd_back(list, line);
 	line_index = -1;
 	while (line_index++ < line_len - 1)
@@ -92,6 +92,8 @@ static ssize_t	get_content(char *buffer,
 	if (buf_start && buffer[buf_start] && buf_start < BUFFER_SIZE)
 	{
 		line_len = new_node(buffer + buf_start, list, BUFFER_SIZE - buf_start);
+		if (line_len < 0)
+			return (-1);
 		if (line_len < BUFFER_SIZE - buf_start)
 			return (buf_start + line_len + 1);
 	}
@@ -99,9 +101,11 @@ static ssize_t	get_content(char *buffer,
 	while (read_len != 0)
 	{
 		buffer[read_len] = '\0';
-		if (read_len == -1)
+		if (read_len < 0)
 			return ((ssize_t)free_me_the_malloc(*list));
 		line_len = new_node(buffer, list, read_len);
+		if (line_len < 0)
+			return (-1);
 		if (line_len < read_len)
 			return (line_len + 1);
 		read_len = read(fd, buffer, BUFFER_SIZE);
@@ -116,20 +120,23 @@ or the last character of the file.
 char	*get_next_line(int fd)
 {
 	static char		buffer[BUFFER_SIZE + 1];
-	static ssize_t	last_size;
-	static int		last_fd;
+	static ssize_t	last_size = 0;
+	static int		last_fd = -1;
 	t_list			*buffer_list;
 	char			*return_line;
 
+	if (fd < 0)
+		return (NULL);
 	if (last_fd != fd || buffer[last_size - 1] != '\n')
 	{
 		last_fd = fd;
 		last_size = 0;
 	}
 	buffer_list = NULL;
-	return_line = NULL;
 	last_size = get_content(buffer, &buffer_list, last_size, fd);
-	if (!last_size && !buffer_list)
-		return (free_me_the_malloc(buffer_list));
-	return (list_to_char(buffer_list, return_line));
+	return_line = NULL;
+	if (buffer_list && last_size >= 0)
+		return (list_to_char(buffer_list, return_line));
+	free_me_the_malloc(buffer_list);
+	return (return_line);
 }
