@@ -91,7 +91,10 @@ This library consists of 43 functions that you can find a description of below, 
 
 ## Ressources
 
-No AI was used in the making of this project. Instructions on functions' behavior came from the project's subject, linux' manual and peer-learning. Programs used to test functions can be found below :
+> [!NOTE]
+No AI was used in the making of this project.
+
+Instructions on functions' behavior came from the project's subject, linux' manual and peer-learning. Programs used to test functions can be found below :
 
 - [libftTester by Tripouille](https://github.com/Tripouille/libftTester)
 - [Libftest by jtoty](https://github.com/jtoty/Libftest)
