@@ -40,6 +40,7 @@ This library consists of 43 functions that you can find a description of below, 
 | `ft_memcmp` | compare two memory areas on an input length until bytes differ, returning the difference of value of byte1 - byte2, otherwise 0. |
 | `ft_memchr` | locate and return a pointer to the first occurence of a character in a memory area, otherwise NULL. |
 | `ft_strlen` | count and return input string length. |
+| `ft_strcmp` | compare two strings until characters differ, returning the difference of value of char1 - char2, otherwise 0. |
 | `ft_strncmp` | compare two strings on an input length until characters differ, returning the difference of value of char1 - char2, otherwise 0. |
 | `ft_strchr` | locate and return a pointer to the first occurence of a character in a string, otherwise NULL. |
 | `ft_strrchr` | locate and return a pointer to the last occurence of a character in a string, otherwise NULL. |
