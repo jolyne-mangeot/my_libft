@@ -6,7 +6,7 @@
 #    By: jmangeot <jmangeot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/26 22:06:43 by jmangeot          #+#    #+#              #
-#    Updated: 2025/12/07 17:49:57 by jmangeot         ###   ########.fr        #
+#    Updated: 2026/02/09 14:36:25 by jmangeot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,8 @@ SRC +=		ft_itoa.c				ft_ltoa.c				ft_lltoa.c		\
 
 #*		String and memory iteration and comparison
 SRC +=		ft_memcmp.c				ft_memchr.c				ft_strlen.c		\
-			ft_strncmp.c			ft_strchr.c				ft_strrchr.c	\
-			ft_strnstr.c			ft_striteri.c			
+			ft_strcmp.c				ft_strncmp.c			ft_strchr.c		\
+			ft_strrchr.c			ft_strnstr.c			ft_striteri.c
 
 #*		String and memory copy and concatenation
 SRC +=		ft_bzero.c				ft_memset.c				ft_memcpy.c		\
@@ -70,13 +70,27 @@ OBJ +=			$(PTFSRC:.c=.o)
 #	// PRINTF VARIABLES //
 
 
+#	// FPRINTF VARIABLES //
+#*		Sources
+FPTFSRC =	ft_fprintf.c			ft_fput_vars.c			ft_fput_numbers.c
+
+#*		Directories
+FPTFDIR =		fprintf/
+OBJFPTFDIR =		$(addprefix $(OBJDIR),$(FPTFDIR))
+
+#*		Code and object files
+FPTFSRC :=		$(addprefix $(FPTFDIR),$(FPTFSRC))
+OBJ +=			$(FPTFSRC:.c=.o)
+#	// FPRINTF VARIABLES //
+
+
 #	// MAKEFILE RULES //
 #*		Mandatories
 all:			$(NAME)
 
 clean:
 	rm -f $(addprefix $(OBJDIR),$(OBJ))
-	rm -fd $(OBJPTFDIR) $(OBJDIR)
+	rm -fd $(OBJPTFDIR) $(OBJFPTFDIR) $(OBJDIR)
 
 fclean:			clean
 	rm -f $(NAME)
@@ -84,7 +98,7 @@ fclean:			clean
 re:			fclean all
 
 #*		Compilation
-$(NAME):		$(OBJDIR) $(OBJPTFDIR) $(OBJ)
+$(NAME):		$(OBJDIR) $(OBJPTFDIR) $(OBJFPTFDIR) $(OBJ)
 	ar rc $(NAME) $(addprefix $(OBJDIR),$(OBJ))
 
 %.o:			%.c
@@ -96,5 +110,8 @@ $(OBJDIR):
 
 $(OBJPTFDIR):	$(OBJDIR)
 	mkdir -p $(OBJPTFDIR)
+
+$(OBJFPTFDIR):	$(OBJDIR)
+	mkdir -p $(OBJFPTFDIR)
 
 .PHONY:			all, clean, fclean, re
